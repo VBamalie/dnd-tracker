@@ -12,5 +12,11 @@ module.exports = {
         })
         res.json(foundBattle)
     },
-    async createBattle
+    async createBattle({body}, res){
+        const newBattle = await Battle.create(body)
+        if(!newBattle){
+            return res.status(400).json({message: "battle creation error"})
+        }
+        res.json(newBattle)
+    }
 }
