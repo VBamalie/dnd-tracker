@@ -21,7 +21,28 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    //add other schemas here
+    partyMembers:
+    [
+      {
+        pcName: 
+        {
+          type: String,
+          required: true
+        },
+        initiative:
+        {
+          type: Number,
+          default: true
+        },
+      }
+    ],
+    savedBattles:
+    [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Battle"
+      }
+    ]
   },
   {
     toJSON: {
