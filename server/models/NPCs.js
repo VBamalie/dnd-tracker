@@ -14,7 +14,8 @@ const npcSchema = new Schema({
     ],
     customName: 
     {
-        type: String
+        type: String,
+        unique: true
     },
     health:
     {
